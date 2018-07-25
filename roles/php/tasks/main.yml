@@ -1,0 +1,2 @@
+- name: PHPのインストール
+  yum: name=php state=present

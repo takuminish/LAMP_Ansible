@@ -1,0 +1,14 @@
+- name: mysqlのrpmをリモートにコピー
+  copy: src=mysql80-community-release-el7-1.noarch.rpm dest=/tmp/
+
+- name: mysqlのrpmをインストール
+  yum: name=/tmp/mysql80-community-release-el7-1.noarch.rpm state=present
+
+- name: mysqlのrpmを削除
+  file: path=/tmp/mysql80-community-release-el7-1.noarch.rpm state=absent
+
+- name: mysqlのインストール
+  yum: name=mysql-community-server state=present
+
+- name: mysqlサーバの起動
+  systemd: state=started name=mysqld
