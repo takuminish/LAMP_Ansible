@@ -9,6 +9,7 @@
 
 - name: mysqlのインストール
   yum: name=mysql-community-server state=present
-
+    
 - name: mysqlサーバの起動
   systemd: state=started name=mysqld
+

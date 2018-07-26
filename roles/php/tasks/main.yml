@@ -1,2 +1,5 @@
 - name: PHPのインストール
   yum: name=php state=present
+
+- name: index.phpの配置
+  template: src=index.php.j2 dest=/var/www/html/index.php
